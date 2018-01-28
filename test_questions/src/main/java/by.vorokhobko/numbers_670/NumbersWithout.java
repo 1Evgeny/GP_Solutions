@@ -1,26 +1,35 @@
 package by.vorokhobko.numbers_670;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NumbersWithout {
 
     private void repeatingNumber(Scanner in, PrintWriter out) {
-        int num = 12345618;
-        boolean have = false;
-        int array[] = new int[(int)Math.log10(num)+1];
-        for(int i = 0; i < array.length; i++) {
-            array[i] = num%10;
-            num/=10;
+        String number;
+        String s = in.next();
+        ArrayList<Integer> result = new ArrayList<>();
+        for (Integer i = 0; i < 10000; i++) {
+            number = i.toString();
+            if (number.length() == 1) {
+                result.add(i);
+            } else if (number.length() == 2 && number.charAt(0) != number.charAt(1)) {
+                result.add(i);
+            } else if (number.length() == 3 && number.charAt(0) != number.charAt(1)
+                    && number.charAt(1) != number.charAt(2)
+                    && number.charAt(0) != number.charAt(2)) {
+                result.add(i);
+            } else if (number.length() == 4 && number.charAt(0) != number.charAt(1)
+                    && number.charAt(1) != number.charAt(2)
+                    && number.charAt(2) != number.charAt(3)
+                    && number.charAt(0) != number.charAt(2)
+                    && number.charAt(0) != number.charAt(3)
+                    && number.charAt(1) != number.charAt(3)) {
+                result.add(i);
+            }
         }
-        for(int i = 0; i < array.length; i++) {
-            for(int j = i; j < array.length; j++)
-                if(array[i] == array[j] && i != j) {
-                    System.out.print(array[i] + " ");
-                    have = true;
-                }
-        }
-        if(!have) System.out.println("Повторяющихся цифр не обнаружено!");
+        out.println(result.get(Integer.parseInt(s)));
     }
 
     public void run() {

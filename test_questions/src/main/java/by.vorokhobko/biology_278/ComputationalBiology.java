@@ -18,15 +18,15 @@ public class ComputationalBiology {
         String secondLine = in.next();
         int position = 0;
         for (int index = 0; index < secondLine.length(); index++) {
-            if ((firstLine.charAt(position)) == secondLine.charAt(index)) {
+            if (firstLine.charAt(position) == secondLine.charAt(index)) {
                 position++;
                 if (position == firstLine.length()) {
-                    out.println("Yes");
+                    out.println("YES");
                     return;
                 }
             }
         }
-        out.println("No");
+        out.println("NO");
     }
 
     public void run() {
