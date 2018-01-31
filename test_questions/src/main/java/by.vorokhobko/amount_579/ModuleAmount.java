@@ -33,8 +33,7 @@ public class ModuleAmount {
         }
         in.close();
         try {
-            in = new Scanner(new FileReader("d:/WORK/Projects/GP_Solutions/"
-                    + "test_questions/src/main/java/by.vorokhobko/amount_579/input.txt"));
+            in = new Scanner(new FileReader("input.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -58,7 +57,7 @@ public class ModuleAmount {
         }
     }
 
-    public void run() {
+    private void run() {
         try (Scanner in = new Scanner(System.in);
              PrintWriter out = new PrintWriter(System.out)) {
             count(in, out);

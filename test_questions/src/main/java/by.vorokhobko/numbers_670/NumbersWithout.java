@@ -40,7 +40,7 @@ public class NumbersWithout {
         return isNeedSave;
     }
 
-    public void run() {
+    private void run() {
         try (Scanner in = new Scanner(System.in);
              PrintWriter out = new PrintWriter(System.out)) {
             repeatingNumber(in, out);

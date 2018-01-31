@@ -29,7 +29,7 @@ public class ComputationalBiology {
         out.println("NO");
     }
 
-    public void run() {
+    private void run() {
         try (Scanner in = new Scanner(System.in);
              PrintWriter out = new PrintWriter(System.out)) {
             decision(in, out);
