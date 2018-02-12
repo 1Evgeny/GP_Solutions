@@ -15,7 +15,8 @@ import java.util.regex.Pattern;
 public class Calculator {
 
     private void calculate(Scanner in, PrintWriter out) {
-        Pattern pattern = Pattern.compile("[^0-9^+\\-*/(),.\\s]|\\d\\s\\d");
+        String patternLine = "[^0-9^+\\-*/(),.\\s]|\\d\\s\\d";
+        Pattern pattern = Pattern.compile(patternLine);
         System.out.println("Please enter String element: ");
         String line = in.nextLine();
         if (!pattern.matcher(line).find()) {
